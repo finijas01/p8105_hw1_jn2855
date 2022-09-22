@@ -1,12 +1,13 @@
 ---
 title: "p8105_hw1_jn2855"
 output: github_document
-date: "2022-09-22"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+library(tidyverse)
 ```
+
+This is Jasmine's R markdown for HW1.
 
 ## R Markdown
 
