@@ -38,3 +38,36 @@ ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color(species)))
 ggsave("scatter_plot_hw1_jn2855.pdf", height = 4, width = 6)
 ```
 
+## Problem 2
+
+### Create a dataframe 
+
+```{r}
+hw1_df = tibble(
+  norm_hw1 = rnorm(10),
+  norm_hw1_pos = norm_hw1 > 0,
+  vec_char_hw1 = character(10),
+  vec_fac_hw1 = factor(x = character(10), 3)
+)
+```
+
+### Take the mean of each variable in my dataframe
+
+```{r}
+mean(pull(hw1_df, norm_hw1))
+mean(pull(hw1_df, norm_hw1_pos))
+mean(pull(hw1_df, vec_char_hw1))
+mean(pull(hw1_df, vec_fac_hw1))
+```
+
+When I took the mean of each variable, the numeric and logical variables worked, while the character and factor ones didn't.
+
+### Convert variables from one type to another
+
+```{r, results='hide'}
+as.numeric(hw1_df$norm_hw1_pos)
+as.numeric(hw1_df$vec_char_hw1)
+as.numeric(hw1_df$vec_fac_hw1)
+```
+
+Only the logical variable can be converted to a numeric one. I suppose it's because "TRUE" and "FALSE" in logical variables can be indicated as "1" and "0" respectively, and this is also why I could only take the mean of the numeric and logical variables.
