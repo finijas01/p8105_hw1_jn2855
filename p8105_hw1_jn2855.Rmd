@@ -18,7 +18,7 @@ data("penguins", package = "palmerpenguins")
 
 ### Write a short desciption of the "penguins" dataset
 
-* The dataset "penguins" have 344 samples. There are 8 variables in total: species, the island the each penguin lives on, the bill length, the bill depth, the flipper length, body mass, sex, and year (of their birth, I suppose).
+* The dataset "penguins" have 344 samples. There are 8 variables in total: species, the island the each penguin lives on, the bill length, the bill depth, the flipper length, body mass, sex, and year (of their birth, I suppose). There are some missing values in each variable.
 
 * The size of the dataset: there are 344 rows and 8 columns in this dataset.(Please refer to the R codes below.)
 
@@ -46,8 +46,8 @@ ggsave("scatter_plot_hw1_jn2855.pdf", height = 4, width = 6)
 hw1_df = tibble(
   norm_hw1 = rnorm(10),
   norm_hw1_pos = norm_hw1 > 0,
-  vec_char_hw1 = character(10),
-  vec_fac_hw1 = factor(x = character(10), 3)
+  vec_char_hw1 = c("When", "practicing", "coding", "it", "does", "take", "a", "lot", "of", "time"),
+  vec_fac_hw1 = factor(c("Easy", "Medium", "Advanced", "Advanced", "Medium", "Easy", "Advanced", "Advanced", "Advanced", "Advanced"))
 )
 ```
 
@@ -64,7 +64,7 @@ When I took the mean of each variable, the numeric and logical variables worked,
 
 ### Convert variables from one type to another
 
-```{r, results='hide'}
+```{r, results='hide', warning = FALSE}
 as.numeric(hw1_df$norm_hw1_pos)
 as.numeric(hw1_df$vec_char_hw1)
 as.numeric(hw1_df$vec_fac_hw1)
