@@ -10,7 +10,31 @@ library(tidyverse)
 
 ## Problem 1
 
+### Load the "penguins" dataset
+
 ```{r}
 data("penguins", package = "palmerpenguins")
+```
+
+### Write a short desciption of the "penguins" dataset
+
+* The dataset "penguins" have 344 samples. There are 8 variables in total: species, the island the each penguin lives on, the bill length, the bill depth, the flipper length, body mass, sex, and year (of their birth, I suppose).
+
+* The size of the dataset: there are 344 rows and 8 columns in this dataset.(Please refer to the R codes below.)
+
+```{r}
+nrow(penguins)
+ncol(penguins)
+```
+* The mean flipper length is 200.9152 mm. (Please refer to the R codes below.)
+
+```{r}
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+### Make a scatterplot and export my first scatterplot to my project directory
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color(species))) + geom_point()
+ggsave("scatter_plot_hw1_jn2855.pdf", height = 4, width = 6)
 ```
 
